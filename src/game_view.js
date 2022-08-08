@@ -7,11 +7,17 @@ function GameView (ctx) {
 
 GameView.prototype.start = function () {
     let that = this;
-    setInterval(function () {
+    // setInterval(function () {
+    //     console.log(that);
+    //     that.game.moveObjects(that.ctx);
+    //     that.game.draw(that.ctx);
+    // }, 1000 / 60)
+    requestAnimationFrame(function () {
         console.log(that);
         that.game.moveObjects(that.ctx);
         that.game.draw(that.ctx);
-    }, 1000 / 60)
+    })
+
 }
 
 
