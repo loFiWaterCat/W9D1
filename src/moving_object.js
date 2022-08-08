@@ -18,7 +18,7 @@ MovingObject.prototype.draw = function(ctx) {
   // );
 
   ctx.beginPath();
-  ctx.moveTo(pos[0]+10), pos[1]+10);
+  ctx.moveTo(pos[0]+4.33), pos[1]+4.33);
   ctx.moveTo(75, 50);
   ctx.lineTo(100, 75);
   ctx.lineTo(100, 25);

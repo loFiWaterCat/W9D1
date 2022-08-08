@@ -25,7 +25,7 @@ eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src
   \******************************/
 /***/ (() => {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (21:34)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|   ctx.beginPath();\\n>   ctx.moveTo(pos[0]+10), pos[1]+10);\\n|   ctx.moveTo(75, 50);\\n|   ctx.lineTo(100, 75);\");\n\n//# sourceURL=webpack:///./src/moving_object.js?");
+eval("throw new Error(\"Module parse failed: Unexpected token (21:38)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|   ctx.beginPath();\\n>   ctx.moveTo(pos[0]+4.33), pos[1]+4.33);\\n|   ctx.moveTo(75, 50);\\n|   ctx.lineTo(100, 75);\");\n\n//# sourceURL=webpack:///./src/moving_object.js?");
 
 /***/ }),
 
