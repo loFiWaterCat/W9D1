@@ -23,9 +23,9 @@ eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src
 /*!******************************!*\
   !*** ./src/moving_object.js ***!
   \******************************/
-/***/ ((module) => {
+/***/ (() => {
 
-eval("function MovingObject(optionsHash) {\n  this.pos = optionsHash.pos;\n  this.vel = optionsHash.vel;\n  this.radius = optionsHash.radius;\n  this.color = optionsHash.color;\n}\n\nMovingObject.prototype.draw = function(ctx) {\n  ctx.fillStyle = this.color;\n  ctx.beginPath();\n\n  ctx.arc(\n    this.pos[0],\n    this.pos[1],\n    this.radius,\n    0,\n    2 * Math.PI\n  );\n\n  // ctx.beginPath();\n  // ctx.moveTo(pos[0]+10), pos[1]+10);\n  // ctx.moveTo(75, 50);\n  // ctx.lineTo(100, 75);\n  // ctx.lineTo(100, 25);\n  \n\n\n  ctx.fill();\n};\n\n\nMovingObject.prototype.move = function () {\n  this.pos[0] += this.vel[0];\n  this.pos[1] += this.vel[1];\n}\n\nmodule.exports = MovingObject;\n\n\n//# sourceURL=webpack:///./src/moving_object.js?");
+eval("throw new Error(\"Module parse failed: Unexpected token (21:34)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|   ctx.beginPath();\\n>   ctx.moveTo(pos[0]+10), pos[1]+10);\\n|   ctx.moveTo(75, 50);\\n|   ctx.lineTo(100, 75);\");\n\n//# sourceURL=webpack:///./src/moving_object.js?");
 
 /***/ }),
 

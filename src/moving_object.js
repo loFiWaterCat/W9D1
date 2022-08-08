@@ -9,19 +9,19 @@ MovingObject.prototype.draw = function(ctx) {
   ctx.fillStyle = this.color;
   ctx.beginPath();
 
-  ctx.arc(
-    this.pos[0],
-    this.pos[1],
-    this.radius,
-    0,
-    2 * Math.PI
-  );
+  // ctx.arc(
+  //   this.pos[0],
+  //   this.pos[1],
+  //   this.radius,
+  //   0,
+  //   2 * Math.PI
+  // );
 
-  // ctx.beginPath();
-  // ctx.moveTo(pos[0]+10), pos[1]+10);
-  // ctx.moveTo(75, 50);
-  // ctx.lineTo(100, 75);
-  // ctx.lineTo(100, 25);
+  ctx.beginPath();
+  ctx.moveTo(pos[0]+10), pos[1]+10);
+  ctx.moveTo(75, 50);
+  ctx.lineTo(100, 75);
+  ctx.lineTo(100, 25);
   
 
 
