@@ -1,3 +1,5 @@
+const Game = require("./game")
+
 function MovingObject(optionsHash) {
   this.pos = optionsHash.pos;
   this.vel = optionsHash.vel;
@@ -24,6 +26,8 @@ MovingObject.prototype.draw = function(ctx) {
 MovingObject.prototype.move = function () {
   this.pos[0] += this.vel[0];
   this.pos[1] += this.vel[1];
+
+  this.pos = Game.wrap(this.pos);
 }
 
 module.exports = MovingObject;

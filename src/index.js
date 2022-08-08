@@ -22,6 +22,6 @@ addEventListener('DOMContentLoaded', function(event) {
   // mo.draw(canvasCntx)
   
   const game = new GameView(canvasCntx);
-    game.start();
+  game.start();
 
 })
