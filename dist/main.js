@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\nconst Util = __webpack_require__(/*! ./util */ \"./src/util.js\")\nwindow.MovingObject = MovingObject;\n\naddEventListener('DOMContentLoaded', function(event) {\n  const canvasEl = document.getElementById(\"game-canvas\");\n  canvasEl.height = 600;\n  canvasEl.width = 800;\n  const canvasCntx = canvasEl.getContext(\"2d\");\n\n\n  const mo = new MovingObject({\n    pos: [30, 30],\n    vel: [10, 10],\n    radius: 5,\n    color: \"#00FF00\"\n  });\n\n  mo.draw(canvasCntx)\n  // Util.inherits(Cat, Animal)\n  setInterval(() => { mo.move(); mo.draw(canvasCntx)},1000) \n\n})\n\n\n// const Game = require('./game.js')\n//\n// const canvasEl = document.getElementsByTagName(\"canvas\")[0];\n// canvasEl.height = window.innerHeight;\n// canvasEl.width = window.innerWidth;\n// new Game(\n//   canvasEl.width,\n//   canvasEl.height\n// ).start(canvasEl);\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\nconst Util = __webpack_require__(/*! ./util */ \"./src/util.js\")\nwindow.MovingObject = MovingObject;\n\naddEventListener('DOMContentLoaded', function(event) {\n  const canvasEl = document.getElementById(\"game-canvas\");\n  canvasEl.height = 600;\n  canvasEl.width = 800;\n  const canvasCntx = canvasEl.getContext(\"2d\");\n\n\n  const mo = new MovingObject({\n    pos: [30, 30],\n    vel: [10, 10],\n    radius: 5,\n    color: \"#00FF00\"\n  });\n\n  mo.draw(canvasCntx)\n  // Util.inherits(Cat, Animal)\n  setInterval(() => { mo.move(); mo.draw(canvasCntx)},1000) \n\n})\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -35,7 +35,7 @@ eval("function MovingObject(optionsHash) {\n  this.pos = optionsHash.pos;\n  thi
   \*********************/
 /***/ ((module) => {
 
-eval("\n\nconst Util = {}\n\nUtil.inherits = function (childClass, parentClass) {\n    function Surrogate() { };\n    Surrogate.prototype = parentClass.prototype;\n    childClass.prototype = new Surrogate();\n    childClass.prototype.constructor = childClass;\n}\n\n\n\nmodule.exports = Util;\n\n//# sourceURL=webpack:///./src/util.js?");
+eval("\n\nconst Util = {}\n\nUtil.inherits = function (childClass, parentClass) {\n    function Surrogate() { };\n    Surrogate.prototype = parentClass.prototype;\n    childClass.prototype = new Surrogate();\n    childClass.prototype.constructor = childClass;\n}\n\nUtil.randomVec = function(length) {\n    const deg = 2 * Math.PI * Math.random();\n    return Util.scale([Math.sin(deg), Math.cos(deg)], length);\n}\n\nUtil.scale = function(vec, m) {\n    return [vec[0] * m, vec[1] * m];\n}\n\n\n\n\nmodule.exports = Util;\n\n\n//# sourceURL=webpack:///./src/util.js?");
 
 /***/ })
 
