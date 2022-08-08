@@ -8,7 +8,7 @@ function MovingObject(optionsHash) {
 MovingObject.prototype.draw = function(ctx) {
   ctx.fillStyle = this.color;
   ctx.beginPath();
-
+// console.log(this)
   ctx.arc(
     this.pos[0],
     this.pos[1],
