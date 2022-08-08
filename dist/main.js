@@ -9,13 +9,23 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/asteroid.js":
+/*!*************************!*\
+  !*** ./src/asteroid.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\nconst Util = __webpack_require__(/*! ./util */ \"./src/util.js\")\n\nfunction Asteroid(optionsHash) {\n  optionsHash.color ||= DEFAULTS.color;\n  this.color = optionsHash.color;\n  \n  optionsHash.radius ||= DEFAULTS.radius;\n  this.radius = optionsHash.radius;\n\n  optionsHash.vel = Util.randomVec(5);\n  this.vel = optionsHash.vel;\n\n  this.pos = optionsHash.pos;\n  \n  MovingObject.call(this, optionsHash)\n};\n\nconst DEFAULTS = {\n  color: \"#a0a0a0\",\n  radius: 15,\n}\n\nUtil.inherits(Asteroid, MovingObject);\n\n\n//# sourceURL=webpack:///./src/asteroid.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\nconst Util = __webpack_require__(/*! ./util */ \"./src/util.js\")\nwindow.MovingObject = MovingObject;\n\naddEventListener('DOMContentLoaded', function(event) {\n  const canvasEl = document.getElementById(\"game-canvas\");\n  canvasEl.height = 600;\n  canvasEl.width = 800;\n  const canvasCntx = canvasEl.getContext(\"2d\");\n\n\n  const mo = new MovingObject({\n    pos: [30, 30],\n    vel: [10, 10],\n    radius: 5,\n    color: \"#00FF00\"\n  });\n\n  mo.draw(canvasCntx)\n  // Util.inherits(Cat, Animal)\n  setInterval(() => { mo.move(); mo.draw(canvasCntx)},1000) \n\n})\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\nconst Util = __webpack_require__(/*! ./util */ \"./src/util.js\")\nconst Asteroid = __webpack_require__(/*! ./asteroid */ \"./src/asteroid.js\")\nwindow.MovingObject = MovingObject;\n\naddEventListener('DOMContentLoaded', function(event) {\n  const canvasEl = document.getElementById(\"game-canvas\");\n  canvasEl.height = 600;\n  canvasEl.width = 800;\n  const canvasCntx = canvasEl.getContext(\"2d\");\n\n\n  const mo = new MovingObject({\n    pos: [30, 30],\n    vel: [10, 10],\n    radius: 5,\n    color: \"#00FF00\"\n  });\n\n  mo.draw(canvasCntx)\n  // Util.inherits(Cat, Animal)\n  // setInterval(() => { mo.move(); mo.draw(canvasCntx)},1000) \n  \n  for (let i = 0; i < 5; i++) {\n    options = {\n      pos: [20 * i, 50],\n    }\n    let a = new Asteroid(options);\n    a.draw(canvasCntx);\n  }\n\n})\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 

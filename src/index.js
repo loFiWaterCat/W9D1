@@ -1,5 +1,6 @@
 const MovingObject = require("./moving_object.js");
 const Util = require("./util")
+const Asteroid = require("./asteroid")
 window.MovingObject = MovingObject;
 
 addEventListener('DOMContentLoaded', function(event) {
@@ -18,6 +19,14 @@ addEventListener('DOMContentLoaded', function(event) {
 
   mo.draw(canvasCntx)
   // Util.inherits(Cat, Animal)
-  setInterval(() => { mo.move(); mo.draw(canvasCntx)},1000) 
+  // setInterval(() => { mo.move(); mo.draw(canvasCntx)},1000) 
+  
+  for (let i = 0; i < 5; i++) {
+    options = {
+      pos: [20 * i, 50],
+    }
+    let a = new Asteroid(options);
+    a.draw(canvasCntx);
+  }
 
 })
