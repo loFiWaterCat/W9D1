@@ -27,6 +27,8 @@ addEventListener('DOMContentLoaded', function(event) {
     }
     let a = new Asteroid(options);
     a.draw(canvasCntx);
+    // setInterval(() => { a.move(); a.draw(canvasCntx)}, 300)
   }
+
 
 })
