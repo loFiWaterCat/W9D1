@@ -35,7 +35,7 @@ eval("function MovingObject(optionsHash) {\n  this.pos = optionsHash.pos;\n  thi
   \*********************/
 /***/ ((module) => {
 
-eval("// const Util = {\n\n//      inherits (childClass, parentClass) {\n//         // debugger\n//         // const childConstructor = childClass.prototype.constructor\n//         function Surrogate () {};\n//         Surrogate.prototype = parentClass.prototype;\n//         childClass.prototype = new Surrogate();\n//         childClass.prototype.constructor = childClass;\n//         // new childClass gives instance of surrogate or parentclass before line 6   \n//     }\n// };\n\nconst Util = {}\n\nUtil.inherits = function (childClass, parentClass) {\n    function Surrogate() { };\n    Surrogate.prototype = parentClass.prototype;\n    childClass.prototype = new Surrogate();\n    childClass.prototype.constructor = childClass;\n}\n\n// function Cat (name) {   \n\n//     this.name = name\n// }\n\n\n\n// function Animal(name) {\n\n//     this.name = name\n// }\n\n// Animal.prototype.walk = function () {\n//     console.log(\"walk\");\n// }\n\n\n// Cat.prototype.meow = function () {\n//     console.log(\"moew\");\n// }\n// Util.inherits(Cat, Animal)\n\nmodule.exports = Util;\n\n//# sourceURL=webpack:///./src/util.js?");
+eval("\n\nconst Util = {}\n\nUtil.inherits = function (childClass, parentClass) {\n    function Surrogate() { };\n    Surrogate.prototype = parentClass.prototype;\n    childClass.prototype = new Surrogate();\n    childClass.prototype.constructor = childClass;\n}\n\n\n\nmodule.exports = Util;\n\n//# sourceURL=webpack:///./src/util.js?");
 
 /***/ })
 
