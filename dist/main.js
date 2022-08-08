@@ -15,7 +15,7 @@
   \*************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\nconst Util = __webpack_require__(/*! ./util */ \"./src/util.js\")\n\nfunction Asteroid(optionsHash) {\n  optionsHash.color ||= DEFAULTS.color;\n  this.color = optionsHash.color;\n  \n  optionsHash.radius ||= DEFAULTS.radius;\n  this.radius = optionsHash.radius;\n\n  optionsHash.vel = Util.randomVec(5);\n  this.vel = optionsHash.vel;\n\n  this.pos = optionsHash.pos;\n  \n  MovingObject.call(this, optionsHash)\n};\n\nconst DEFAULTS = {\n  color: \"#a0a0a0\",\n  radius: 15,\n}\n\nUtil.inherits(Asteroid, MovingObject);\nmodule.exports = Asteroid;\n\n\n//# sourceURL=webpack:///./src/asteroid.js?");
+eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\nconst Util = __webpack_require__(/*! ./util */ \"./src/util.js\")\n\nfunction Asteroid(optionsHash) {\n  optionsHash.color ||= DEFAULTS.color;\n  this.color = optionsHash.color;\n  \n  optionsHash.radius ||= DEFAULTS.radius;\n  this.radius = optionsHash.radius;\n\n  optionsHash.vel = Util.randomVec(5);\n  this.vel = optionsHash.vel;\n\n  this.pos = optionsHash.pos;\n  this.game = optionsHash.game;\n  \n  MovingObject.call(this, optionsHash)\n};\n\nconst DEFAULTS = {\n  color: \"#a0a0a0\",\n  radius: 15,\n}\n\nUtil.inherits(Asteroid, MovingObject);\nmodule.exports = Asteroid;\n\n\n//# sourceURL=webpack:///./src/asteroid.js?");
 
 /***/ }),
 
@@ -53,9 +53,9 @@ eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src
 /*!******************************!*\
   !*** ./src/moving_object.js ***!
   \******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((module) => {
 
-eval("const Game = __webpack_require__(/*! ./game */ \"./src/game.js\")\n\nfunction MovingObject(optionsHash) {\n  this.pos = optionsHash.pos;\n  this.vel = optionsHash.vel;\n  this.radius = optionsHash.radius;\n  this.color = optionsHash.color;\n}\n\nMovingObject.prototype.draw = function(ctx) {\n  ctx.fillStyle = this.color;\n  ctx.beginPath();\n// console.log(this)\n  ctx.arc(\n    this.pos[0],\n    this.pos[1],\n    this.radius,\n    0,\n    2 * Math.PI\n  );\n\n  ctx.fill();\n};\n\n\nMovingObject.prototype.move = function () {\n  this.pos[0] += this.vel[0];\n  this.pos[1] += this.vel[1];\n\n  this.pos = Game.wrap(this.pos);\n}\n\nmodule.exports = MovingObject;\n\n\n//# sourceURL=webpack:///./src/moving_object.js?");
+eval("\n\nfunction MovingObject(optionsHash) {\n  this.pos = optionsHash.pos;\n  this.vel = optionsHash.vel;\n  this.radius = optionsHash.radius;\n  this.color = optionsHash.color;\n}\n\nMovingObject.prototype.draw = function(ctx) {\n  ctx.fillStyle = this.color;\n  ctx.beginPath();\n// console.log(this)\n  ctx.arc(\n    this.pos[0],\n    this.pos[1],\n    this.radius,\n    0,\n    2 * Math.PI\n  );\n\n  ctx.fill();\n};\n\n\nMovingObject.prototype.move = function () {\n  this.pos[0] += this.vel[0];\n  this.pos[1] += this.vel[1];\n\n  this.pos = this.game.wrap(this.pos);\n}\n\nmodule.exports = MovingObject;\n\n\n//# sourceURL=webpack:///./src/moving_object.js?");
 
 /***/ }),
 

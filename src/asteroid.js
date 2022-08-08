@@ -12,6 +12,7 @@ function Asteroid(optionsHash) {
   this.vel = optionsHash.vel;
 
   this.pos = optionsHash.pos;
+  this.game = optionsHash.game;
   
   MovingObject.call(this, optionsHash)
 };
