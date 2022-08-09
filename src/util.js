@@ -18,6 +18,12 @@ Util.scale = function(vec, m) {
     return [vec[0] * m, vec[1] * m];
 }
 
+Util.distanceBetween = function(obj1, obj2) {
+    const a = (obj1.pos[0] - obj2.pos[0]);
+    const b = (obj1.pos[1] - obj2.pos[1]);
+    return Math.sqrt(a ** 2 + b ** 2);
+}
+
 
 
 
